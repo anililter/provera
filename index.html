@@ -7,7 +7,7 @@
   <meta name="description" content="Provera Real Estate Dubai Roadshow – 15-16 Ağustos, JW Marriott Hotel Ankara. Ücretsiz kayıt."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <style>
   /* ═══════════════════════════════════════
@@ -27,12 +27,14 @@
     --border:     #E8E1D5;
     --radius:     20px;
     --radius-sm:  12px;
+    --font-display: 'Fraunces', serif;
+    --font-body:    'Plus Jakarta Sans', sans-serif;
   }
 
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-weight: 300;
     background: var(--white);
     color: var(--text);
@@ -58,7 +60,7 @@
   }
 
   .nav-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -68,7 +70,7 @@
   }
   .nav-logo small {
     display: block;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.42rem;
     font-weight: 300;
     letter-spacing: 0.45em;
@@ -177,7 +179,7 @@
   }
 
   .m-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(5.5rem, 24vw, 8rem);
     font-weight: 700;
     color: var(--white);
@@ -187,7 +189,7 @@
   }
 
   .m-sub {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(1.15rem, 5vw, 1.5rem);
     font-weight: 400;
     font-style: italic;
@@ -227,7 +229,7 @@
     gap: 10px;
     background: var(--white);
     color: var(--dark);
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.15em;
@@ -287,7 +289,7 @@
   }
 
   .form-card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.9rem;
     font-weight: 700;
     color: var(--dark);
@@ -342,7 +344,7 @@
     padding: 0 16px;
     border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.9rem;
     font-weight: 300;
     color: var(--text);
@@ -383,7 +385,7 @@
     color: var(--white);
     border: none;
     border-radius: var(--radius-sm);
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -451,7 +453,7 @@
   .stat-card:nth-child(4) { background: linear-gradient(135deg, #3A2E1A, #7A5E28); }
 
   .stat-num {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 2.4rem;
     font-weight: 700;
     color: var(--white);
@@ -460,7 +462,7 @@
   }
 
   .stat-num span {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 300;
     color: rgba(255,255,255,0.5);
@@ -508,7 +510,7 @@
   }
 
   .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(1.6rem, 7vw, 2.4rem);
     font-weight: 700;
     color: var(--dark);
@@ -552,7 +554,7 @@
     bottom: 0; left: 0; right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.65));
     color: var(--white);
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 0.95rem;
     font-weight: 400;
     font-style: italic;
@@ -600,7 +602,7 @@
   }
 
   .why-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1rem;
     font-weight: 700;
     color: var(--dark);
@@ -636,7 +638,7 @@
   }
 
   .event-banner-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--white);
@@ -674,7 +676,7 @@
   }
 
   .event-row-val {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--white);
@@ -688,7 +690,7 @@
     height: 48px;
     background: var(--gold);
     border-radius: 10px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.15em;
@@ -711,7 +713,7 @@
   }
 
   .f-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 0.3em;
@@ -840,7 +842,7 @@
   .d-eyebrow::before { content:''; width:24px; height:1px; background: var(--gold); flex-shrink:0; }
 
   .d-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(3.5rem, 5.5vw, 6rem);
     font-weight: 700;
     color: var(--white);
@@ -850,7 +852,7 @@
   }
 
   .d-sub {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(1rem, 1.8vw, 1.3rem);
     font-weight: 400;
     font-style: italic;
@@ -887,7 +889,7 @@
   }
 
   .d-info-val {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 0.98rem;
     font-weight: 500;
     color: var(--white);
@@ -895,7 +897,7 @@
   }
 
   .d-brand {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.3em;
@@ -903,7 +905,7 @@
     text-transform: uppercase;
     line-height: 1;
   }
-  .d-brand small { display: block; font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; letter-spacing: 0.42em; color: rgba(255,255,255,0.3); margin-top: 4px; }
+  .d-brand small { display: block; font-family: var(--font-body); font-size: 0.5rem; font-weight: 300; letter-spacing: 0.42em; color: rgba(255,255,255,0.3); margin-top: 4px; }
 
   .d-right {
     background: var(--white);
@@ -929,7 +931,7 @@
   }
 
   .d-form-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(2rem, 3vw, 2.6rem);
     font-weight: 700;
     color: var(--dark);
@@ -958,7 +960,7 @@
   .d-stat:last-child { border-right: none; }
 
   .d-stat-num {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 700;
     color: var(--gold-lt);
