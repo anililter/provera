@@ -136,47 +136,60 @@
   .m-hero-body {
     position: relative;
     z-index: 2;
-    padding: 0 22px 36px;
-    padding-bottom: calc(36px + env(safe-area-inset-bottom));
+    padding: 0 22px 44px;
+    padding-bottom: calc(44px + env(safe-area-inset-bottom));
+    text-align: center;
+    align-items: center;
   }
 
   .m-eyebrow {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.65rem;
-    font-weight: 400;
-    letter-spacing: 0.25em;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 10px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
   .m-eyebrow::before {
     content: '';
     display: block;
-    width: 20px; height: 1px;
-    background: var(--gold);
+    width: 24px; height: 1px;
+    background: var(--gold-lt);
+    flex-shrink: 0;
+  }
+  .m-eyebrow::after {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold-lt);
     flex-shrink: 0;
   }
 
   .m-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(4rem, 18vw, 6rem);
+    font-size: clamp(5rem, 22vw, 7.5rem);
     font-weight: 700;
     color: var(--white);
     line-height: 0.88;
-    letter-spacing: 0.02em;
-    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.8);
   }
 
   .m-sub {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(0.95rem, 4vw, 1.2rem);
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
     font-weight: 400;
     font-style: italic;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.06em;
-    margin-bottom: 28px;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.7);
   }
 
   /* Info chips */
@@ -184,26 +197,28 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
+    justify-content: center;
   }
 
   .m-chip {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.22);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 100px;
-    padding: 8px 16px;
-    font-size: 0.75rem;
-    font-weight: 400;
+    padding: 9px 18px;
+    font-size: 0.78rem;
+    font-weight: 500;
     color: var(--white);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     white-space: nowrap;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
-  .m-chip-icon { font-size: 0.85rem; }
+  .m-chip-icon { font-size: 0.9rem; }
 
   /* Scroll-down CTA */
   .m-scroll-cta {
@@ -1037,6 +1052,11 @@
       </div>
 
       <div class="f-group">
+        <label class="f-label" for="telefon">Telefon</label>
+        <input class="f-input" type="tel" id="telefon" name="Telefon" placeholder="+90 5XX XXX XX XX" required autocomplete="tel"/>
+      </div>
+
+      <div class="f-group">
         <label class="f-label" for="butce">
           Yatırım Bütçesi
           <span class="opt">— isteğe bağlı</span>
@@ -1129,6 +1149,10 @@
         <div class="f-group">
           <label class="f-label" for="epostaD">E-posta</label>
           <input class="f-input" type="email" id="epostaD" name="E-posta" placeholder="ornek@email.com" required/>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="telefonD">Telefon</label>
+          <input class="f-input" type="tel" id="telefonD" name="Telefon" placeholder="+90 5XX XXX XX XX" required/>
         </div>
         <div class="f-group">
           <label class="f-label" for="butceD">Yatırım Bütçesi <span class="opt">— isteğe bağlı</span></label>
@@ -1324,12 +1348,13 @@
     okEl.style.display = 'none';
     errEl.style.display = 'none';
 
-    const ad    = formEl.querySelector('[name="Ad"]').value.trim();
-    const soyad = formEl.querySelector('[name="Soyad"]').value.trim();
-    const email = formEl.querySelector('[name="E-posta"]').value.trim();
+    const ad     = formEl.querySelector('[name="Ad"]').value.trim();
+    const soyad  = formEl.querySelector('[name="Soyad"]').value.trim();
+    const email  = formEl.querySelector('[name="E-posta"]').value.trim();
+    const tel    = formEl.querySelector('[name="Telefon"]').value.trim();
 
-    if (!ad || !soyad || !email) {
-      errEl.textContent = '⚠️ Lütfen Ad, Soyad ve E-posta alanlarını doldurun.';
+    if (!ad || !soyad || !email || !tel) {
+      errEl.textContent = '⚠️ Lütfen tüm zorunlu alanları doldurun.';
       errEl.style.display = 'block';
       return;
     }
