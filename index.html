@@ -98,7 +98,7 @@
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
   /* ═══════════════════════════════════════
-     MOBILE HERO — full viewport immersive
+     MOBILE HERO — blue gradient
   ═══════════════════════════════════════ */
   .m-hero {
     position: relative;
@@ -109,87 +109,89 @@
     justify-content: flex-end;
     padding-top: 56px;
     overflow: hidden;
+    background: linear-gradient(160deg,
+      #0369A1 0%,
+      #0EA5E9 35%,
+      #38BDF8 65%,
+      #7DD3FC 85%,
+      #E0F4FF 100%
+    );
   }
 
-  .m-hero-bg {
+  /* Burj Khalifa: dekoratif, sağ alt */
+  .m-hero-city {
     position: absolute;
-    inset: 0;
+    bottom: 0;
+    right: -20px;
+    width: 65%;
+    max-width: 280px;
+    height: 75%;
     background:
-      url('https://images.unsplash.com/photo-1546412414-8035e1776c9a?w=1600&q=95')
-      center 30% / cover no-repeat;
+      url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=90')
+      center bottom / cover no-repeat;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.45) 0%, transparent 100%),
+                linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.45) 0%, transparent 100%);
+    opacity: 0.55;
+    pointer-events: none;
   }
 
-  /* Gradient: dark top (for nav) → transparent mid → dark bottom (for content) */
-  .m-hero-grad {
+  /* Hafif parıltı efekti üstte */
+  .m-hero-glow {
     position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(180deg,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.0) 35%,
-        rgba(0,0,0,0.0) 52%,
-        rgba(0,0,0,0.75) 80%,
-        rgba(0,0,0,0.92) 100%
-      );
+    top: 20%;
+    left: -30%;
+    width: 120%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.18) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   .m-hero-body {
     position: relative;
     z-index: 2;
-    padding: 0 22px 44px;
+    padding: 0 24px 44px;
     padding-bottom: calc(44px + env(safe-area-inset-bottom));
-    text-align: center;
-    align-items: center;
+    text-align: left;
   }
 
   .m-eyebrow {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
+    gap: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 14px;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 12px;
   }
   .m-eyebrow::before {
     content: '';
     display: block;
-    width: 24px; height: 1px;
-    background: var(--gold-lt);
-    flex-shrink: 0;
-  }
-  .m-eyebrow::after {
-    content: '';
-    display: block;
-    width: 24px; height: 1px;
-    background: var(--gold-lt);
+    width: 18px; height: 1px;
+    background: rgba(255,255,255,0.7);
     flex-shrink: 0;
   }
 
   .m-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(5rem, 22vw, 7.5rem);
+    font-size: clamp(5.5rem, 24vw, 8rem);
     font-weight: 700;
     color: var(--white);
-    line-height: 0.88;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
-    text-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.8);
+    line-height: 0.85;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
   }
 
   .m-sub {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    font-size: clamp(1.15rem, 5vw, 1.5rem);
     font-weight: 400;
     font-style: italic;
-    color: rgba(255,255,255,0.92);
-    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.06em;
     margin-bottom: 32px;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.7);
   }
 
   /* Info chips */
@@ -198,25 +200,21 @@
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 32px;
-    justify-content: center;
   }
 
   .m-chip {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(0,0,0,0.45);
-    border: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.5);
     border-radius: 100px;
-    padding: 9px 18px;
+    padding: 9px 16px;
     font-size: 0.78rem;
     font-weight: 500;
     color: var(--white);
     letter-spacing: 0.02em;
     white-space: nowrap;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
   .m-chip-icon { font-size: 0.9rem; }
 
@@ -993,8 +991,8 @@
      MOBILE: HERO
 ════════════════════════════════════════ -->
 <section class="m-hero">
-  <div class="m-hero-bg" id="heroBg"></div>
-  <div class="m-hero-grad"></div>
+  <div class="m-hero-city"></div>
+  <div class="m-hero-glow"></div>
 
   <div class="m-hero-body">
     <div class="m-eyebrow">Ankara'dan Dubai'ye</div>
@@ -1331,7 +1329,7 @@
 <script>
   /* ── Parallax bg zoom ── */
   setTimeout(() => {
-    document.getElementById('heroBg')?.classList.add('loaded');
+    document.getElementById('dLeftBg')?.classList.add('loaded');
     document.getElementById('dLeftBg')?.classList.add('loaded');
   }, 100);
 
